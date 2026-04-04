@@ -1,0 +1,128 @@
+.offer {
+  padding: 52px 48px 64px;
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── Top-right squiggle ── */
+.offer__squiggle {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Title row ── */
+.offer__title-row {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 40px;
+}
+
+.offer__title-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+/* ── Title ── */
+.offer__title {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 6vw, 68px);
+  font-weight: 800;
+  line-height: 1.1;
+  color: #111;
+  letter-spacing: -1.5px;
+}
+
+/* Green pill highlight on "can" */
+.hl-pill-green {
+  display: inline-block;
+  background: #b6f5c3;
+  padding: 0 12px 4px;
+  border-radius: 100px;
+}
+
+/* Yellow underline on "offer" */
+.hl-underline-yellow {
+  position: relative;
+  display: inline-block;
+}
+.hl-underline-yellow::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 2px;
+  height: 5px;
+  background: #f5c842;
+  border-radius: 3px;
+  opacity: 0.8;
+}
+
+/* ── Service list ── */
+.offer__list {
+  border-top: 1px solid #e0e0e0;
+  position: relative;
+  z-index: 1;
+}
+
+.offer__item {
+  display: grid;
+  grid-template-columns: 200px 1fr 48px;
+  align-items: center;
+  gap: 28px;
+  padding: 24px 0;
+  border-bottom: 1px solid #e0e0e0;
+  cursor: pointer;
+  transition: padding-left 0.2s ease;
+}
+
+.offer__item:hover {
+  padding-left: 6px;
+}
+
+.offer__item-tag {
+  font-size: 11.5px;
+  color: #888;
+  line-height: 1.6;
+}
+
+.offer__item-title {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 2.4vw, 30px);
+  font-weight: 700;
+  color: #111;
+  letter-spacing: -0.3px;
+}
+
+.offer__item-arrow {
+  font-size: 20px;
+  color: #111;
+  text-align: right;
+  transition: transform 0.2s ease;
+  display: inline-block;
+}
+
+.offer__item:hover .offer__item-arrow {
+  transform: translateX(6px);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .offer {
+    padding: 40px 24px;
+  }
+  .offer__pill {
+    left: 140px;
+    top: 0;
+  }
+  .offer__item {
+    grid-template-columns: 1fr 32px;
+    gap: 12px;
+  }
+  .offer__item-tag {
+    display: none;
+  }
+}
